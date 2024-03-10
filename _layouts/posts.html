@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+  const PER_PAGE = "{{ page.per_page }}" ? "{{ page.per_page }}" : "{{ site.per_page }}";
+  const POSTS = [];
+  const PIN_ICON = "{{ site.data.locales[lang].post.pin_prompt }}";
+
+  {% for post in site.posts %}
+    {% include no-linenos.html content=post.content %}
+
+    POSTS.push(
+      {
+        date: $(`{% include datetime.html date=post.date lang=lang %}`),
+        image: "{{ post.image }}",
+        image_path: "{{ post.image_path }}",
+        categories: "{{ post.categories }}",
+        pin: "{{ post.pin }}" == 'true',
+        content: `{{ content | markdownify | strip_html | truncate: 200 | escape }}`,
+        excerpt: "{{ post.excerpt | strip_html | escape | strip }}",
+        title: "{{ post.title | escape }}",
+        url: "{{ site.baseurl }}{{ post.url }}"
+      },
+    )
+  {% endfor %}
+
+  POSTS.sort((post_1, post_2) => post_2.pin - post_1.pin);
+</script>
+<script src="{{ site.baseurl }}{% link assets/js/posts.js %}"></script>
+
+<div id="post-list" class="flex-grow-1 px-xl-1"></div>
+<nav aria-label="Page Navigation">
+  <ul class="pagination align-items-center mt-4 mb-0">
+    <li id="previous" class="page-item disabled">
+      <button id="previous-btn" class="page-link" aria-label="previous-page" onclick="this.blur()">
+        <i class="fas fa-angle-left"></i>
+      </button>
+    </li>
+    <li id="next" class="page-item">
+      <button id="next-btn" class="page-link" aria-label="next-page" onclick="this.blur()">
+        <i class="fas fa-angle-right"></i>
+      </button>
+    </li>
+  </ul>
+</nav>
