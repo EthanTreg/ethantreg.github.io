@@ -1,5 +1,7 @@
 ---
 layout: default
+script_includes:
+  - comment
 ---
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -10,7 +12,6 @@ layout: default
   const PIN_ICON = "{{ site.data.locales[lang].post.pin_prompt }}";
 
   {% for post in site.posts %}
-    {% include no-linenos.html content=post.content %}
 
     POSTS.push(
       {
