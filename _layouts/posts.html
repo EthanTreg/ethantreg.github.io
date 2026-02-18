@@ -8,7 +8,7 @@ script_includes:
 
 <script>
   const PER_PAGE =
-    {{ page.per_page | default: site.per_page | jsonify }};
+    {{ site.per_page | jsonify }};
 
   const PIN_ICON =
     {{ site.data.locales[lang].post.pin_prompt | jsonify }};
