@@ -147,7 +147,7 @@ pwa:
 
 per_page: 4
 
-paginate: 4
+paginate: 3
 paginate_path: "./tabs2/research2/page:num/"
 
 # The base URL of your site
