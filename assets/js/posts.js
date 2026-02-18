@@ -86,8 +86,6 @@ function displayPosts() {
 
 /**
  * Disables buttons at page limits
- * @param {jQuery} $previous
- * @param {jQuery} $next
  */
 function updateButtons() {
   $previous = $('#previous');

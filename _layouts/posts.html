@@ -7,28 +7,29 @@ script_includes:
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <script>
-  const PER_PAGE = "{{ page.per_page }}" ? "{{ page.per_page }}" : "{{ site.per_page }}";
+  const PER_PAGE =
+    {{ page.per_page | default: site.per_page | jsonify }};
+
+  const PIN_ICON =
+    {{ site.data.locales[lang].post.pin_prompt | jsonify }};
+
   const POSTS = [];
-  const PIN_ICON = "{{ site.data.locales[lang].post.pin_prompt }}";
 
   {% for post in site.posts %}
-
-    POSTS.push(
-      {
-        date: $(`{% include datetime.html date=post.date lang=lang %}`),
-        image: "{{ post.image }}",
-        image_path: "{{ post.image_path }}",
-        categories: "{{ post.categories }}",
-        pin: "{{ post.pin }}" == 'true',
-        content: `{{ content | markdownify | strip_html | truncate: 200 | escape }}`,
-        excerpt: "{{ post.excerpt | strip_html | escape | strip }}",
-        title: "{{ post.title | escape }}",
-        url: "{{ site.baseurl }}{{ post.url }}"
-      },
-    )
+    POSTS.push({
+      date: {{ post.date | date_to_xmlschema | jsonify }},
+      image: {{ post.image | jsonify }},
+      image_path: {{ post.image_path | jsonify }},
+      categories: {{ post.categories | jsonify }},
+      pin: {{ post.pin | default: false | jsonify }},
+      content: {{ post.content | markdownify | strip_html | truncate: 200 | jsonify }},
+      excerpt: {{ post.excerpt | strip_html | jsonify }},
+      title: {{ post.title | jsonify }},
+      url: {{ post.url | relative_url | jsonify }}
+    });
   {% endfor %}
 
-  POSTS.sort((post_1, post_2) => post_2.pin - post_1.pin);
+  POSTS.sort((a, b) => b.pin - a.pin);
 </script>
 <script src="{{ site.baseurl }}{% link assets/js/posts.js %}"></script>
 
