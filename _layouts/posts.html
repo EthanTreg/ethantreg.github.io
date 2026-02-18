@@ -17,7 +17,7 @@ script_includes:
 
   {% for post in site.posts %}
     POSTS.push({
-      date: {{ post.date | date_to_xmlschema | jsonify }},
+      date: {{ post.date | date: "%d %b %Y" | jsonify }},
       image: {{ post.image | jsonify }},
       image_path: {{ post.image_path | jsonify }},
       categories: {{ post.categories | jsonify }},

@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Rapid Spectral Parameter Prediction for Black Hole X-Ray Binaries using Physicalised Autoencoders
-pin: true
+title: Rapid Spectral Parameter Prediction for Black Hole X-Ray Binaries Using Physicalised Autoencoders
 authors: [e_tregidga, j_steiner, c_garraffo, c_rhea, m_aubin]
 ---
 
@@ -16,5 +15,6 @@ from the numerous outbursts catalogued by NICER and generalises them to new syst
 fitting. The effectiveness of this approach is demonstrated in the spectral fitting of BHBs and holds promise for use in other
 areas of astronomy and physics for categorising large datasets.
 
+**Journal**: [Monthly Notices of the Royal Astronomical Society](https://academic.oup.com/mnras/article/529/2/1654/7617718)\\
 **arXiv:** [2310.17249](https://arxiv.org/abs/2310.17249)\\
-**Code:** [Fast Spectra Prediction network](https://github.com/EthanTreg/Spectrum-Machine-Learning)
+**Code:** [Fast Spectra Prediction Network](https://github.com/EthanTreg/Spectrum-Machine-Learning)
