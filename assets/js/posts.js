@@ -133,19 +133,19 @@ function displayPosts() {
  * Disables buttons at the page limits.
  */
 function updateButtons() {
-  $previous = $('#previous');
-  $next = $('#next');
+  const $PREVIOUS = $('#previous');
+  const $NEXT = $('#next');
 
   if (currentPage <= 0) {
-    $previous.addClass('disabled');
+    $PREVIOUS.addClass('disabled');
   } else {
-    $previous.removeClass('disabled');
+    $PREVIOUS.removeClass('disabled');
   }
 
-  if (currentPage >= totalPages()) {
-    $next.addClass('disabled');
+  if (currentPage + 1 >= totalPages()) {
+    $NEXT.addClass('disabled');
   } else {
-    $next.removeClass('disabled');
+    $NEXT.removeClass('disabled');
   }
 }
 
@@ -166,7 +166,7 @@ function postsButtons() {
     renderPageNumbers();
   });
   $NEXT.on('click', () => {
-    if ((currentPage + 1) * PER_PAGE < POSTS.length) {
+    if (currentPage + 1 < totalPages()) {
       currentPage += 1;
       displayPosts();
     }
