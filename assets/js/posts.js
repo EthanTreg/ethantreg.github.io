@@ -1,8 +1,54 @@
-/* global PER_PAGE POSTS PIN_ICON */
+/* global PER_PAGE POSTS */
 let currentPage = 0;
 
 /**
- * Adds posts depending on the page number and the amount of posts per page
+ * Calculates the total number of pages based on the number of posts and posts per page.
+ * @returns {number} Total number of pages.
+ */
+function totalPages() {
+  return Math.max(1, Math.ceil(POSTS.length / PER_PAGE));
+}
+
+/**
+ * Renders the page number buttons dynamically and updates their state.
+ * Adds click handlers to each button to navigate to the corresponding page.
+ */
+function renderPageNumbers() {
+  const $PAGINATION = $('#pagination');
+
+  // Remove any previously injected page number <li>s
+  $PAGINATION.find('.page-number').remove();
+  const PAGES = totalPages();
+
+  for (let i = 0; i < PAGES; i += 1) {
+    const PAGE = i + 1;
+
+    const $LI = $('<li class="page-item page-number">');
+    const $BTN = $(
+      `<button type="button" class="page-link" aria-label="page-${PAGE}">${PAGE}</button>`,
+    );
+
+    if (i === currentPage) {
+      $LI.addClass('active');
+    }
+
+    $BTN.on('click', () => {
+      currentPage = i;
+      displayPosts();
+      updateButtons();
+      renderPageNumbers();
+    });
+
+    $LI.append($BTN);
+
+    // Insert before the "next" button
+    $('#next').before($LI);
+  }
+}
+
+/**
+ * Displays posts for the current page by slicing the POSTS array.
+ * Dynamically generates HTML for each post and appends it to the container.
  */
 function displayPosts() {
   const IDXS = [currentPage * PER_PAGE, (currentPage + 1) * PER_PAGE];
@@ -43,7 +89,7 @@ function displayPosts() {
     );
     const $META_DATA = $('<div class="me-auto">');
 
-    // Add short description and meta data
+    // Add short description and metadata
     $BODY.append($(`<h1 class="card-title my-2 mt-md-0">${post.title}</h1>`));
     $PARA.append(post.content);
     $BODY.append($('<div class="card-text content mt-0 mb-3">').append($PARA));
@@ -72,7 +118,6 @@ function displayPosts() {
     if (post.pin) {
       const $PIN = $('<div class="pin ms-1">');
       $PIN.append($('<i class="fas fa-thumbtack fa-fw">'));
-      $PIN.append($(`<span>${PIN_ICON}</span>`));
       $META.append($PIN);
     }
 
@@ -85,7 +130,7 @@ function displayPosts() {
 }
 
 /**
- * Disables buttons at page limits
+ * Disables buttons at the page limits.
  */
 function updateButtons() {
   $previous = $('#previous');
@@ -97,7 +142,7 @@ function updateButtons() {
     $previous.removeClass('disabled');
   }
 
-  if ((currentPage + 1) * PER_PAGE >= POSTS.length) {
+  if (currentPage >= totalPages()) {
     $next.addClass('disabled');
   } else {
     $next.removeClass('disabled');
@@ -118,6 +163,7 @@ function postsButtons() {
     }
 
     updateButtons();
+    renderPageNumbers();
   });
   $NEXT.on('click', () => {
     if ((currentPage + 1) * PER_PAGE < POSTS.length) {
@@ -126,10 +172,13 @@ function postsButtons() {
     }
 
     updateButtons();
+    renderPageNumbers();
   });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   postsButtons();
   displayPosts();
+  updateButtons();
+  renderPageNumbers();
 });
