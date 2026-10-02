@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Measuring the Dark Matter Self-Interaction Cross-Section with Deep Compact Clustering for Robust Machine Learning Inference"
 pin: true
 math: true
@@ -22,6 +23,6 @@ If the observed latent cluster shares no similarities with latent clusters from 
 This thus provides us with a method of measuring measure machine learning confidence.
 This method serves as a blueprint for transparent and robust inference that is in demand in scientific machine learning.
 
-**Journal:** [Astronomy & Astrophysics](https://doi.org/10.1051/0004-6361/202556629)\\
+**Journal**: [Astronomy & Astrophysics](https://doi.org/10.1051/0004-6361/202556629)\\
 **arXiv:** [2511.09660](https://arxiv.org/abs/2511.09660)\\
 **Code:** [Bayesian DARKSKIES](https://github.com/EthanTreg/Bayesian-DARKSKIES)

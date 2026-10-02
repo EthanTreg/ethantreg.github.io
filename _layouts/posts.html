@@ -5,26 +5,13 @@ script_includes:
 ---
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/assets/js/data/mathjax.js"></script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 <script>
   const PER_PAGE = {{ site.per_page | jsonify }};
-  const POSTS = [];
-
-  {% for post in site.posts %}
-    POSTS.push({
-      date: {{ post.date | date: "%d %b %Y" | jsonify }},
-      image: {{ post.image | jsonify }},
-      image_path: {{ post.image_path | jsonify }},
-      categories: {{ post.categories | jsonify }},
-      pin: {{ post.pin | default: false | jsonify }},
-      content: {{ post.content | markdownify | strip_html | truncate: 200 | jsonify }},
-      excerpt: {{ post.excerpt | strip_html | jsonify }},
-      title: {{ post.title | jsonify }},
-      url: {{ post.url | relative_url | jsonify }}
-    });
-  {% endfor %}
-
-  POSTS.sort((a, b) => b.pin - a.pin);
+  const AUTHORS = {{ site.data.authors | jsonify }};
+  const POSTS = {{ site[page.posts_data] | jsonify }};
 </script>
 <script src="{{ site.baseurl }}{% link assets/js/posts.js %}"></script>
 

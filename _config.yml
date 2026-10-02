@@ -156,7 +156,7 @@ pwa:
     deny_paths:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
-per_page: 4
+per_page: 3
 
 paginate: 3
 
@@ -181,6 +181,12 @@ collections:
   tabs:
     output: true
     sort_by: order
+  research:
+    output: true
+    permalink: /research/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
 
 defaults:
   - scope:
@@ -203,6 +209,16 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: post
 
 sass:
   style: compressed
