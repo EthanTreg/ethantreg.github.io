@@ -1,15 +1,9 @@
 ---
 title: "Impact of Line-of-Sight Structure on Weak Lensing Observables of Galaxy Clusters"
 math: true
-authors:
-  [
-    f_vecchi,
-    d_harvey,
-    j_nightingale,
-    m_schaller,
-    j_schaye,
-    e_tregidga,
-  ]
+authors: [f_vecchi, d_harvey, j_nightingale, m_schaller, j_schaye, e_tregidga]
+categories: [Research, Galaxy Clusters]
+tags: [Galaxy Clusters, Weak Lensing, Simulations, FLAMINGO]
 ---
 
 # Abstract

@@ -1,6 +1,16 @@
 ---
 title: Rapid Spectral Parameter Prediction for Black Hole X-Ray Binaries Using Physicalised Autoencoders
 authors: [e_tregidga, j_steiner, c_garraffo, c_rhea, m_aubin]
+categories: [Research, Black Hole X-Ray Binaries]
+tags: [
+  Machine Learning,
+  Autoencoders, 
+  Interpretability,
+  Black Holes X-Ray Binaries,
+  Spectra, 
+  NICER,
+  AstroAI,
+]
 ---
 
 # Abstract

@@ -3,6 +3,20 @@ let currentPage = 0;
 const MAIN_NAME = 'Ethan Tregidga';
 
 /**
+ * Formats a date string into a more readable format (DD MMM YYYY).
+ *
+ * @param {string} dateString - The date string to format.
+ * @returns {string} - The formatted date string.
+ */
+function formatDate(dateString) {
+  return new Date(dateString).toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  });
+}
+
+/**
  * Calculates the total number of pages based on the number of posts and posts per page.
  * @returns {number} Total number of pages.
  */
@@ -101,12 +115,21 @@ function displayPosts() {
 
   // Loop through all posts that should be displayed for the page number
   POSTS.slice(IDXS[0], IDXS[1]).forEach((post) => {
-    const DATE = new Date(post.date);
+    const DATE = formatDate(post.date);
     const $article = $('<article class="card-wrapper card">');
     const $link = $(
       `<a href="${post.url}" class="post-preview row g-0 flex-md-row-reverse">`,
     );
     let card_body_col = 12;
+    let dateRange = '';
+
+    if (post.date_range) {
+      if (post.end_date) {
+        dateRange = `${DATE} \u2013 ${formatDate(post.end_date)}`;
+      } else {
+        dateRange = `${DATE} \u2013 Present`;
+      }
+    }
 
     // Add image if the post has an image
     if (post.image) {
@@ -139,14 +162,13 @@ function displayPosts() {
     $body.append($(`<h1 class="card-title my-2 mt-md-0">${post.title}</h1>`));
     $authors.addClass('text-muted small mb-2');
     $body.append($authors);
-    $para.append(post.content.replace(/^#{1,6}\s+.+$/gm, '').trim());
+    $para.append(post.content
+      .replace(/^#{1,6}\s+.+$/gm, '')
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+      .trim());
     $body.append($('<div class="card-text content mt-0 mb-3">').append($para));
     $metaData.append($('<i class="far fa-calendar fa-fw me-1">'));
-    $metaData.append(DATE.toLocaleDateString('en-GB', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric',
-    }));
+    $metaData.append(dateRange || DATE);
 
     // Display post categories
     if (post.categories.length > 0) {
@@ -156,7 +178,7 @@ function displayPosts() {
         if (i === post.categories.length - 1) {
           $SPAN.append(category);
         } else {
-          $SPAN.append(category + ',');
+          $SPAN.append(category + ' \u2013 ');
         }
       });
 

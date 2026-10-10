@@ -1,0 +1,27 @@
+---
+layout: page
+# All the Tags of posts.
+---
+
+{% assign all_items = site.research | concat: site.projects %}
+
+{% assign tags = '' | split: '' %}
+{% for item in all_items %}
+  {% for t in item.tags %}
+    {% unless tags contains t %}
+      {% assign tags = tags | push: t %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign sorted_tags = tags | sort_natural %}
+
+<div id="tags" class="d-flex flex-wrap mx-xl-2">
+  {% for t in sorted_tags %}
+    {% assign tagged = all_items | where_exp: 'item', 'item.tags contains t' %}
+    <div>
+      <a class="tag" href="{{ t | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
+        {{ t }}<span class="text-muted">{{ tagged | size }}</span>
+      </a>
+    </div>
+  {% endfor %}
+</div>

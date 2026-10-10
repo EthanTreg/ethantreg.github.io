@@ -1,6 +1,16 @@
 ---
 title: Variational Autoencoder with Normalizing Flow for X-Ray Spectral Fitting
 authors: [f_redmen, e_tregidga, j_steiner, c_garraffo]
+categories: [Research, Black Hole X-Ray Binaries]
+tags: [
+  Machine Learning,
+  Variational Autoencoders,
+  Normalizing Flows,
+  Black Holes X-Ray Binaries,
+  Spectra,
+  NICER,
+  AstroAI,
+]
 ---
 
 # Abstract

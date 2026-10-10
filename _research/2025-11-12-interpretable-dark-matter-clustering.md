@@ -2,13 +2,18 @@
 title: "Measuring the Dark Matter Self-Interaction Cross-Section with Deep Compact Clustering for Robust Machine Learning Inference"
 pin: true
 math: true
-authors:
-  [
-    e_tregidga,
-    d_harvey,
-    l_biggio,
-    f_vecchi,
-  ]
+authors: [e_tregidga, d_harvey, l_biggio, f_vecchi]
+categories: [Research, Galaxy Clusters]
+tags: [
+  Machine Learning,
+  Clustering,
+  Interpretability,
+  Galaxy Clusters,
+  Self-Interacting Dark Matter,
+  Simulations,
+  BAHAMAS,
+  DARKSKIES,
+]
 ---
 
 # Abstract

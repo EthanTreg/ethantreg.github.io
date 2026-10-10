@@ -15,6 +15,8 @@ authors:
     d_finkbeiner,
     p_cargile,
   ]
+categories: [Test1, Test2]
+tags: [tag1, tag2]
 ---
 
 # Abstract

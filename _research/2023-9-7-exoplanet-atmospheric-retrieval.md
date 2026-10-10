@@ -1,20 +1,29 @@
 ---
 title: "Simulation-based Inference for Exoplanet Atmospheric Retrieval: Insights from Winning the Ariel Data Challenge 2023 Using Normalizing Flows"
-authors:
-  [
-    m_aubin,
-    c_cuesta_lazaro,
-    e_tregidga,
-    j_viana,
-    c_garraffo,
-    i_gordon,
-    m_lopez_morales,
-    r_hargreaves,
-    v_makhnev,
-    j_drake,
-    d_finkbeiner,
-    p_cargile,
-  ]
+authors: [
+  m_aubin,
+  c_cuesta_lazaro,
+  e_tregidga,
+  j_viana,
+  c_garraffo,
+  i_gordon,
+  m_lopez_morales,
+  r_hargreaves,
+  v_makhnev,
+  j_drake,
+  d_finkbeiner,
+  p_cargile,
+]
+categories: [Research, Exoplanets]
+tags: [
+  Machine Learning,
+  Normalizing Flows,
+  Simulation-Based Inference,
+  Exoplanets, 
+  Spectra, 
+  Ariel,
+  AstroAI,
+]
 ---
 
 # Abstract

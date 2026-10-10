@@ -1,7 +1,9 @@
 ---
-# layout: codes
-icon: fas fa-archive
+layout: posts
+title: Projects
+icon: fas fa-gear
 order: 2
+posts_data: projects
 ---
 
 ## [PyTorch Network Loader](https://github.com/EthanTreg/PyTorch-Network-Loader)

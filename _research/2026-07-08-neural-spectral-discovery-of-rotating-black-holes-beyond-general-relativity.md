@@ -1,6 +1,15 @@
 ---
 title: Neural-Spectral Discovery of Rotating Black Holes Beyond General Relativity
 authors: [f_agurto-sepulveda, m_oyarzo, a_biasi, d_agarwal, e_tregidga, j_steiner, j_edelstein, g_giribet, c_garraffo]
+categories: [Research, General Relativity]
+tags: [
+  Machine Learning,
+  Physics-Informed Neural Networks,
+  Spectral Methods,
+  Black Holes,
+  General Relativity,
+  AstroAI,
+]
 ---
 
 # Abstract
