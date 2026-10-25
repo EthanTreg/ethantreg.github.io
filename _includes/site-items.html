@@ -1,0 +1,5 @@
+{%- comment -%}
+  Assigns `site_items`: every post, research paper and project, newest first.
+  Includes share the caller's scope, so use `site_items` after including this.
+{%- endcomment -%}
+{%- assign site_items = site.posts | concat: site.research | concat: site.projects | sort: 'date' | reverse -%}

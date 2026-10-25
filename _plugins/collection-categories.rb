@@ -43,6 +43,9 @@ module CollectionArchives
           end
         end
 
+        # Counts per name, e.g. for the trending tags panel (site.data.archive_counts.tags)
+        (site.data['archive_counts'] ||= {})[key] = groups.transform_values(&:size)
+
         groups.each do |name, docs|
           sorted = docs.sort_by { |doc| doc.date || Time.at(0) }.reverse
           site.pages << ArchivePage.new(site, name, sorted, layout, folder, type)

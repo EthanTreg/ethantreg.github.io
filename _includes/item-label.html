@@ -1,0 +1,5 @@
+{%- case include.item.collection -%}
+  {%- when 'research' -%}Paper
+  {%- when 'projects' -%}Project
+  {%- else -%}News
+{%- endcase -%}

@@ -6,8 +6,9 @@ tags: [
   Machine Learning,
   Variational Autoencoders,
   Normalizing Flows,
-  Black Holes X-Ray Binaries,
+  Black Hole X-Ray Binaries,
   Spectra,
+  Satellite Imaging,
   NICER,
   AstroAI,
 ]

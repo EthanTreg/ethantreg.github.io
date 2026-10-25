@@ -19,8 +19,9 @@ tags: [
   Machine Learning,
   Normalizing Flows,
   Simulation-Based Inference,
-  Exoplanets, 
-  Spectra, 
+  Simulations,
+  Exoplanets,
+  Spectra,
   Ariel,
   AstroAI,
 ]

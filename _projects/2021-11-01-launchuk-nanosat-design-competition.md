@@ -4,11 +4,12 @@ title: "Reducing UK Greenhouse Emissions with Nanosat Peatland Mapping"
 date_range: true
 end_date: 2022-05-01
 authors: [r_pope, c_brown, h_mitchell, h_ryder, e_tregidga]
-categories: [Projects, Satellite Design]
+categories: [Projects, Space Design]
 tags: [
-  Satellite Design,
+  Space Design,
   Competition,
   Earth Observation,
+  Southampton Spaceflight Society,
 ]
 ---
 

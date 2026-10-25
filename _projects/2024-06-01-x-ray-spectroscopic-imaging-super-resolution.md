@@ -9,7 +9,6 @@ tags: [
   Machine Learning,
   Point Clouds,
   Super-Resolution,
-  X-Ray Telescopes,
   Chandra,
   Line Emission Mapper,
   AstroAI,

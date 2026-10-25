@@ -1,0 +1,66 @@
+{%- comment -%}
+  A post-list style card for a research/project document. Mirrors the cards
+  rendered by assets/js/posts.js on the Research and Projects tabs.
+
+  Arguments:
+    doc: The document to render.
+{%- endcomment -%}
+
+{% assign doc = include.doc %}
+{% assign max_authors = 3 %}
+{% assign date_format = '%d %b %Y' %}
+
+<article class="card-wrapper card">
+  <a href="{{ doc.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+    <div class="col-md-12">
+      <div class="card-body d-flex flex-column">
+        <h1 class="card-title my-2 mt-md-0">{{ doc.title }}</h1>
+
+        {% if doc.authors.size > 0 %}
+          {% assign main_in_shown = false %}
+          <p class="text-muted small mb-2">
+            {%- for id in doc.authors limit: max_authors -%}
+              {%- assign name = site.data.authors[id].name | default: id -%}
+              {%- unless forloop.first %}, {% endunless -%}
+              {%- if name == site.social.name -%}
+                {%- assign main_in_shown = true -%}
+                <strong>{{ name }}</strong>
+              {%- else -%}
+                {{ name }}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if doc.authors.size > max_authors -%}
+              , {% if main_in_shown %}et al.{% else %}<strong>et al.</strong>{% endif %}
+            {%- endif -%}
+          </p>
+        {% endif %}
+
+        <div class="card-text content mt-0 mb-3">
+          <p>{% include doc-summary.html doc=doc %}</p>
+        </div>
+
+        <div class="post-meta flex-grow-1 d-flex align-items-end">
+          <div class="me-auto">
+            <i class="far fa-calendar fa-fw me-1"></i>
+            {{ doc.date | date: date_format }}
+            {%- if doc.date_range %}
+              &ndash;
+              {% if doc.end_date %}{{ doc.end_date | date: date_format }}{% else %}Present{% endif %}
+            {%- endif %}
+
+            {% if doc.categories.size > 0 %}
+              <i class="far fa-folder-open fa-fw me-1"></i>
+              <span class="categories">{{ doc.categories | join: ' &ndash; ' }}</span>
+            {% endif %}
+          </div>
+
+          {% if doc.pin %}
+            <div class="pin ms-1">
+              <i class="fas fa-thumbtack fa-fw"></i>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </a>
+</article>

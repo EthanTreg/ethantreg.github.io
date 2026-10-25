@@ -7,8 +7,9 @@ authors: [e_tregidga, r_gupta, a_mohammad, j_steiner, g_mastroserio]
 categories: [Projects, Websites]
 tags: [
   Black Hole X-Ray Binaries,
+  Satellite Imaging,
   NICER,
-  Websites,
+  Web Development,
   Data Archives,
   Databases,
   Django,

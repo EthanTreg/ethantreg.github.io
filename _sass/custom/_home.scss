@@ -1,0 +1,41 @@
+#home {
+  section {
+    margin-top: 2.5rem;
+  }
+
+  .home-heading {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .interest-card {
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    border: 0;
+  }
+
+  #post-list {
+    margin-top: 0;
+  }
+
+  .news-list li {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--main-border-color);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .news-date {
+    flex: 0 0 5.5rem;
+  }
+}
+
+#home .news-label {
+  flex: 0 0 4.5rem;
+}
+
+#archives .item-label {
+  margin-left: 0.5rem;
+}

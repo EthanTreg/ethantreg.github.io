@@ -23,7 +23,6 @@ layout: page
     {% endunless %}
   {% endif %}
 {% endfor %}
-{% assign top_categories = top_categories | sort %}
 
 {% for category_name in top_categories %}
   {% assign posts_of_category = all_items | where_exp: 'item', 'item.categories contains category_name' %}

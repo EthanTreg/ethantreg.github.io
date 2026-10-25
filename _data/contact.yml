@@ -11,10 +11,6 @@
   icon: 'fab fa-linkedin'
   url:  'https://www.linkedin.com/in/ethan-tregidga/'
 
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true
-
 # Uncomment and complete the url below to enable more contact options
 #
 #- type: twitter

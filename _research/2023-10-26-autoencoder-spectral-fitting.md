@@ -4,10 +4,11 @@ authors: [e_tregidga, j_steiner, c_garraffo, c_rhea, m_aubin]
 categories: [Research, Black Hole X-Ray Binaries]
 tags: [
   Machine Learning,
-  Autoencoders, 
+  Autoencoders,
   Interpretability,
-  Black Holes X-Ray Binaries,
-  Spectra, 
+  Black Hole X-Ray Binaries,
+  Spectra,
+  Satellite Imaging,
   NICER,
   AstroAI,
 ]

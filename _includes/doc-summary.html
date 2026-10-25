@@ -1,0 +1,32 @@
+{%- comment -%}
+  Plain-text summary of a research/project document.
+
+  Uses `description` from the front matter if set, otherwise the text between the
+  first and second headings (i.e. skips the leading "# Abstract" / "# Description").
+
+  Arguments:
+    doc: The document to summarise.
+    max_length: The maximum length of the summary. Default is 300.
+{%- endcomment -%}
+
+{%- if include.doc.description -%}
+  {{- include.doc.description -}}
+{%- else -%}
+  {%- assign html = include.doc.content | markdownify -%}
+  {%- assign parts = html | split: '</h1>' -%}
+
+  {%- if parts.size > 1 -%}
+    {%- assign html = parts[1] | split: '<h1' | first -%}
+  {%- endif -%}
+
+  {%- assign max_length = include.max_length | default: 300 -%}
+
+  {{- html
+    | strip_html
+    | newline_to_br
+    | replace: '<br />', ' '
+    | strip_newlines
+    | strip
+    | truncate: max_length
+  -}}
+{%- endif -%}

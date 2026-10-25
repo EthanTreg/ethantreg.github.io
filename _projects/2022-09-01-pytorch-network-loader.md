@@ -5,7 +5,7 @@ pin: true
 date_range: true
 authors: [e_tregidga]
 categories: [Projects, Frameworks]
-tags: [Machine Learning, Frameworks, PyTorch]
+tags: [Machine Learning, Frameworks, PyTorch, Web Development]
 ---
 
 # Description
