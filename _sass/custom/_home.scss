@@ -39,3 +39,15 @@
 #archives .item-label {
   margin-left: 0.5rem;
 }
+
+// Heading with a "see all" link on the right. Chirpy's purged Bootstrap
+// drops utilities like align-items-baseline and my-0, so set them here.
+#home .home-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  h2 {
+    margin: 0;
+  }
+}

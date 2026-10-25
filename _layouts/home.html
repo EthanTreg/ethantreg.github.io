@@ -58,8 +58,8 @@ layout: default
       {% assign count = page[count_key] | default: 3 %}
 
       {% if selected.size > 0 %}
-        <div class="d-flex align-items-baseline justify-content-between home-heading">
-          <h2 class="mb-0">Highlighted {{ label | capitalize }}</h2>
+        <div class="home-heading home-heading-row">
+          <h2>Highlighted {{ label | capitalize }}</h2>
           <a href="{{ label | prepend: '/' | append: '/' | relative_url }}" class="small">
             All {{ label }} <i class="fas fa-angle-right fa-fw"></i>
           </a>
@@ -76,8 +76,8 @@ layout: default
   {% include site-items.html %}
   {% if site_items.size > 0 %}
     <section>
-      <div class="d-flex align-items-baseline justify-content-between home-heading">
-        <h2 class="mb-0">News</h2>
+      <div class="home-heading home-heading-row">
+        <h2>News</h2>
         <a href="{{ '/archives/' | relative_url }}" class="small">
           All news <i class="fas fa-angle-right fa-fw"></i>
         </a>

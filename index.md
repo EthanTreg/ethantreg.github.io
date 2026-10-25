@@ -32,6 +32,8 @@ outside_research: |
   - Sports, including squash, badminton, and dodgeball
 ---
 
+# About
+
 I am a PhD student at [EPFL](https://www.epfl.ch/) working with [Dr David Harvey](https://people.epfl.ch/david.harvey) developing interpretable neural networks to help solve the mystery of dark matter.
 I enjoy collaborating and challenging myself by working on many projects, including being part of [AstroAI](https://astroai.cfa.harvard.edu/) at the Center for Astrophysics | Harvard & Smithsonian, working with students, and joining spaceflight and AI societies.
 Alongside my education, I have worked on projects ranging from developing Martian rovers and nanosatellites to using satellite imaging for climate science, and won several awards.
